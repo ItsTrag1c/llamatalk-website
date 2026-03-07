@@ -16,7 +16,6 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] bg-[rgba(10,10,10,0.8)] backdrop-blur-md">
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-        {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
           <Image src="/llama.png" alt="LlamaTalk" width={28} height={28} className="rounded-md" />
           <span className="font-semibold text-[var(--text)] text-sm">
@@ -24,7 +23,6 @@ export function Navbar() {
           </span>
         </a>
 
-        {/* Desktop links */}
         <div className="hidden md:flex items-center gap-1">
           {links.map((link) => (
             <a
@@ -46,7 +44,6 @@ export function Navbar() {
           </a>
         </div>
 
-        {/* Mobile menu button */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden p-1.5 text-[var(--text-muted)] hover:text-[var(--text)]"
@@ -55,14 +52,13 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden border-t border-[var(--border)] bg-[var(--background)] px-6 py-3">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              onClick={() => setOpen(false)}
+              onClick={() => setOpen(false)} // close menu on nav
               className="block py-2 text-sm text-[var(--text-muted)] hover:text-[var(--text)]"
             >
               {link.label}

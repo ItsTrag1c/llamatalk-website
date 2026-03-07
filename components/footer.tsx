@@ -12,7 +12,6 @@ export function Footer() {
     <footer className="border-t border-[var(--border)] py-10 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-8">
-          {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Image src="/llama.png" alt="LlamaTalk" width={20} height={20} className="rounded" />
@@ -23,7 +22,6 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Repos */}
           <div>
             <h4 className="text-xs font-medium text-[var(--text-muted)] mb-3 flex items-center gap-1.5">
               <Github className="w-3 h-3" />

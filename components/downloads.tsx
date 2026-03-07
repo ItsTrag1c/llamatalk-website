@@ -32,7 +32,6 @@ function DownloadRow({ appKey }: { appKey: AppKey }) {
 
   return (
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-lg border border-[var(--border)] bg-[var(--surface)]">
-      {/* Info */}
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-0.5">
           <h3 className="font-medium text-sm text-[var(--text)]">{app.name}</h3>
@@ -41,7 +40,6 @@ function DownloadRow({ appKey }: { appKey: AppKey }) {
         <p className="text-xs text-[var(--text-muted)]">{app.tagline}</p>
       </div>
 
-      {/* Download buttons */}
       <div className="flex gap-2 shrink-0">
         <a
           href={getDownloadUrl(appKey, "installer")}

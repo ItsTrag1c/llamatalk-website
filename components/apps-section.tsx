@@ -31,12 +31,11 @@ export function AppsSection() {
 function AppCard({ appKey }: { appKey: AppKey }) {
   const app = APP_DATA[appKey];
   const version = VERSIONS[appKey];
-  const Icon = icons[appKey];
+  const Icon = icons[appKey]; // pulls icon from the map above
 
   return (
     <div className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--border-hover)] transition-colors">
       <div className="p-5">
-        {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="w-10 h-10 rounded-lg bg-[rgba(249,115,22,0.1)] border border-[rgba(249,115,22,0.2)] flex items-center justify-center">
             <Icon className="w-5 h-5 text-[var(--accent)]" />
@@ -44,12 +43,10 @@ function AppCard({ appKey }: { appKey: AppKey }) {
           <span className="text-xs text-[var(--text-dim)] font-mono">v{version}</span>
         </div>
 
-        {/* Content */}
         <h3 className="font-semibold text-[var(--text)] mb-1">{app.name}</h3>
         <p className="text-sm text-[var(--accent)] mb-3">{app.tagline}</p>
         <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-5">{app.description}</p>
 
-        {/* Features */}
         <div className="flex flex-wrap gap-1.5 mb-5">
           {app.features.map((feature) => (
             <span
@@ -61,7 +58,6 @@ function AppCard({ appKey }: { appKey: AppKey }) {
           ))}
         </div>
 
-        {/* Actions */}
         <div className="flex gap-2">
           <a
             href={getDownloadUrl(appKey)}

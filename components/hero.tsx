@@ -7,7 +7,6 @@ export function Hero() {
   return (
     <section className="pt-32 pb-20 px-6">
       <div className="max-w-3xl mx-auto text-center">
-        {/* Icon */}
         <div className="flex justify-center mb-8">
           <Image
             src="/llama.png"
@@ -19,19 +18,16 @@ export function Hero() {
           />
         </div>
 
-        {/* Title */}
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--text)]">
           AI Chat for{" "}
           <span className="text-[var(--accent)]">Power Users</span>
         </h1>
 
-        {/* Subtitle */}
         <p className="mt-4 text-lg text-[var(--text-muted)] max-w-xl mx-auto leading-relaxed">
           Three apps. One ecosystem. Local-first AI with zero telemetry,
           full encryption, and support for 8 providers.
         </p>
 
-        {/* Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
             href="#download"
@@ -51,7 +47,6 @@ export function Hero() {
           </a>
         </div>
 
-        {/* Stats bar */}
         <div className="mt-10 flex items-center justify-center gap-6 text-xs text-[var(--text-dim)]">
           <span>3 apps</span>
           <span className="w-1 h-1 rounded-full bg-[var(--border)]" />
