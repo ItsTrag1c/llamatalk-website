@@ -9,27 +9,27 @@ export type AppKey = keyof typeof VERSIONS;
 export const APP_DATA = {
   chat: {
     name: "LlamaTalk Chat",
-    tagline: "Beautiful desktop chat interface",
-    description: "Frameless window, floating assistant, system tray integration. Built with React 19 + Vite 7 + Tauri 2.",
+    tagline: "Desktop GUI for conversations",
+    description: "Frameless desktop window with a floating assistant overlay and system tray. For when you want a visual interface alongside Build.",
     color: "chat",
     github: "ItsTrag1c/LlamaTalk-Desktop",
     features: ["Frameless UI", "Floating Assistant", "System Tray", "Multi-provider"],
   },
   cli: {
     name: "LlamaTalk CLI",
-    tagline: "Chat from your terminal",
-    description: "Interactive REPL plus one-shot mode. Perfect for quick questions without leaving the command line.",
+    tagline: "Quick answers from the terminal",
+    description: "Lightweight REPL and one-shot mode. Ask a question without leaving your shell — no agent overhead, just fast answers.",
     color: "cli",
     github: "ItsTrag1c/LlamaTalk-CLI",
     features: ["REPL Mode", "One-shot Mode", "Streaming Output", "8 Providers"],
   },
   build: {
     name: "LlamaTalk Build",
-    tagline: "AI agent that codes alongside you",
-    description: "ReAct-style AI with 14 built-in tools, project memory, and file generation.",
+    tagline: "Agentic coding from the terminal",
+    description: "A ReAct-style coding agent with 14 tools, project memory, plan/build modes, and session history. Reads, writes, and executes — so you can focus on the problem, not the plumbing.",
     color: "build",
     github: "ItsTrag1c/LlamaTalk-Build",
-    features: ["14 Tools", "ReAct Agent", "Project Memory", "File Generation"],
+    features: ["14 Tools", "ReAct Agent", "Project Memory", "Plan & Build Modes"],
   },
 } as const;
 

@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Download, Github } from "lucide-react";
+import { Download, Github, Wrench } from "lucide-react";
+import { VERSIONS, getDownloadUrl } from "@/lib/versions";
 
 export function Hero() {
   return (
@@ -19,42 +20,39 @@ export function Hero() {
         </div>
 
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--text)]">
-          AI Chat for{" "}
-          <span className="text-[var(--accent)]">Power Users</span>
+          AI Tools That{" "}
+          <span className="text-[var(--accent)]">Never Phone Home</span>
         </h1>
 
         <p className="mt-4 text-lg text-[var(--text-muted)] max-w-xl mx-auto leading-relaxed">
-          Three apps. One ecosystem. Local-first AI with zero telemetry,
-          full encryption, and support for 8 providers.
+          Local models. Zero telemetry. Full encryption. An agentic coding
+          assistant and companion tools that keep your data on your machine.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href="#download"
+            href={getDownloadUrl("build")}
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm font-medium transition-colors"
           >
             <Download className="w-4 h-4" />
-            Download for Windows
+            Download LlamaTalk Build
           </a>
           <a
-            href="https://github.com/ItsTrag1c"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#apps"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[var(--border)] hover:border-[var(--border-hover)] hover:bg-[var(--surface)] text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
           >
-            <Github className="w-4 h-4" />
-            View on GitHub
+            Explore the Suite
           </a>
         </div>
 
         <div className="mt-10 flex items-center justify-center gap-6 text-xs text-[var(--text-dim)]">
-          <span>3 apps</span>
+          <span>Local-first</span>
+          <span className="w-1 h-1 rounded-full bg-[var(--border)]" />
+          <span>Zero telemetry</span>
           <span className="w-1 h-1 rounded-full bg-[var(--border)]" />
           <span>8 providers</span>
           <span className="w-1 h-1 rounded-full bg-[var(--border)]" />
           <span>MIT licensed</span>
-          <span className="w-1 h-1 rounded-full bg-[var(--border)]" />
-          <span>Zero telemetry</span>
         </div>
       </div>
     </section>

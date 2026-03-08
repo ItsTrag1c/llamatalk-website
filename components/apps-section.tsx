@@ -1,6 +1,6 @@
 "use client";
 
-import { Monitor, Terminal, Wrench, ExternalLink, Download } from "lucide-react";
+import { Monitor, Terminal, Wrench, ExternalLink, Download, Bot, FileCode, Brain, ShieldCheck } from "lucide-react";
 import { APP_DATA, VERSIONS, getDownloadUrl, type AppKey } from "@/lib/versions";
 
 const icons = {
@@ -13,13 +13,22 @@ export function AppsSection() {
   return (
     <section className="py-20 px-6" id="apps">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl font-bold mb-2">The Suite</h2>
-        <p className="text-[var(--text-muted)] text-sm mb-10">
-          Three interfaces, same ecosystem. Pick what fits your workflow.
+        {/* Build — Spotlight */}
+        <h2 className="text-2xl font-bold mb-2">The Flagship</h2>
+        <p className="text-[var(--text-muted)] text-sm mb-8">
+          An agentic coding assistant that runs on your machine.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-4">
-          {(Object.keys(APP_DATA) as AppKey[]).map((key) => (
+        <BuildSpotlight />
+
+        {/* Chat + CLI — Companion tools */}
+        <h3 className="text-lg font-semibold mt-16 mb-2">Companion Tools</h3>
+        <p className="text-[var(--text-muted)] text-sm mb-8">
+          Same ecosystem, same providers. Pick what fits the moment.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-4">
+          {(["chat", "cli"] as AppKey[]).map((key) => (
             <AppCard key={key} appKey={key} />
           ))}
         </div>
@@ -28,10 +37,79 @@ export function AppsSection() {
   );
 }
 
+function BuildSpotlight() {
+  const app = APP_DATA.build;
+  const version = VERSIONS.build;
+
+  const highlights = [
+    { icon: Bot, label: "ReAct Agent", desc: "Iterative reason-and-act loop with streaming tool calls" },
+    { icon: FileCode, label: "14 Built-in Tools", desc: "File I/O, bash, git, search, web fetch, and more" },
+    { icon: Brain, label: "Project Memory", desc: "Persistent memory across sessions, per-project context" },
+    { icon: ShieldCheck, label: "3-Tier Safety", desc: "Tools classified Safe, Moderate, or Dangerous" },
+  ];
+
+  return (
+    <div className="rounded-xl border border-[var(--accent)]/30 bg-gradient-to-b from-[rgba(249,115,22,0.04)] to-[var(--surface)] overflow-hidden">
+      <div className="p-6 md:p-8">
+        <div className="flex items-start justify-between mb-5">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-xl bg-[rgba(249,115,22,0.12)] border border-[rgba(249,115,22,0.25)] flex items-center justify-center">
+              <Wrench className="w-6 h-6 text-[var(--accent)]" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-[var(--text)]">{app.name}</h3>
+              <p className="text-sm text-[var(--accent)]">{app.tagline}</p>
+            </div>
+          </div>
+          <span className="text-xs text-[var(--text-dim)] font-mono mt-1">v{version}</span>
+        </div>
+
+        <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-6 max-w-2xl">
+          {app.description}
+        </p>
+
+        <div className="grid sm:grid-cols-2 gap-3 mb-6">
+          {highlights.map((h) => {
+            const Icon = h.icon;
+            return (
+              <div key={h.label} className="flex items-start gap-3 p-3 rounded-lg bg-[var(--surface-2)] border border-[var(--border)]">
+                <Icon className="w-4 h-4 text-[var(--accent)] mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-xs font-medium text-[var(--text)]">{h.label}</p>
+                  <p className="text-xs text-[var(--text-muted)]">{h.desc}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="flex gap-2">
+          <a
+            href={getDownloadUrl("build")}
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white transition-colors"
+          >
+            <Download className="w-4 h-4" />
+            Download Build
+          </a>
+          <a
+            href={`https://github.com/${app.github}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm rounded-lg border border-[var(--border)] hover:border-[var(--border-hover)] hover:bg-[var(--surface-2)] text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+          >
+            <ExternalLink className="w-4 h-4" />
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function AppCard({ appKey }: { appKey: AppKey }) {
   const app = APP_DATA[appKey];
   const version = VERSIONS[appKey];
-  const Icon = icons[appKey]; // pulls icon from the map above
+  const Icon = icons[appKey];
 
   return (
     <div className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--border-hover)] transition-colors">

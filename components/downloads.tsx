@@ -13,7 +13,7 @@ export function Downloads() {
         </p>
 
         <div className="space-y-3">
-          {(Object.keys(APP_DATA) as AppKey[]).map((key) => (
+          {(["build", "chat", "cli"] as AppKey[]).map((key) => (
             <DownloadRow key={key} appKey={key} />
           ))}
         </div>

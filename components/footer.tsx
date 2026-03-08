@@ -18,7 +18,7 @@ export function Footer() {
               <span className="text-sm font-medium text-[var(--text)]">LlamaTalk Suite</span>
             </div>
             <p className="text-xs text-[var(--text-dim)] max-w-xs leading-relaxed">
-              Local-first AI chat by ItsTrag1c. Zero telemetry, full encryption, open source.
+              Local-first AI tools by ItsTrag1c. Zero telemetry, full encryption, open source.
             </p>
           </div>
 
