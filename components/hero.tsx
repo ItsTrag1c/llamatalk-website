@@ -20,13 +20,14 @@ export function Hero() {
         </div>
 
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--text)]">
-          AI Tools That{" "}
-          <span className="text-[var(--accent)]">Never Phone Home</span>
+          AI Tools,{" "}
+          <span className="text-[var(--accent)]">Your Data, Your Rules</span>
         </h1>
 
         <p className="mt-4 text-lg text-[var(--text-muted)] max-w-xl mx-auto leading-relaxed">
-          Local models. Zero telemetry. Full encryption. An agentic coding
-          assistant and companion tools that keep your data on your machine.
+          Built for local models. Zero telemetry. Full encryption. An agentic
+          coding assistant and companion tools that put you in control — with
+          optional cloud providers when you need them.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
