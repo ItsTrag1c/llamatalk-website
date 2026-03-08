@@ -11,10 +11,10 @@ export const APP_DATA = {
   chat: {
     name: "LlamaTalk Chat",
     tagline: "Desktop GUI for conversations",
-    description: "Frameless desktop window with a floating assistant overlay and system tray. For when you want a visual interface alongside Build.",
+    description: "Frameless desktop window with a floating assistant overlay and system tray. Available on Windows and macOS.",
     color: "chat",
     github: "ItsTrag1c/LlamaTalk-Chat",
-    features: ["Frameless UI", "Floating Assistant", "System Tray", "Multi-provider"],
+    features: ["Frameless UI", "Floating Assistant", "System Tray", "Windows & macOS"],
   },
   cli: {
     name: "LlamaTalk Chat CLI",
@@ -35,32 +35,41 @@ export const APP_DATA = {
   buildDesktop: {
     name: "LlamaTalk Build Desktop",
     tagline: "Agentic coding with a desktop GUI",
-    description: "The LlamaTalk Build agent wrapped in a desktop interface. All the same tools and capabilities, with a visual experience.",
+    description: "The LlamaTalk Build agent wrapped in a desktop interface. All the same tools and capabilities, with a visual experience. Available on Windows and macOS.",
     color: "build",
-    github: "ItsTrag1c/LlamaTalk-Build-Desktop",
-    features: ["Desktop GUI", "ReAct Agent", "Project Memory", "14 Tools"],
+    github: "ItsTrag1c/LlamaTalk-Build",
+    features: ["Desktop GUI", "ReAct Agent", "Windows & macOS", "14 Tools"],
   },
 } as const;
 
-export function getDownloadUrl(app: AppKey, type: "installer" | "standalone" = "installer"): string {
+export function getDownloadUrl(app: AppKey, type: "installer" | "standalone" = "installer", platform: "windows" | "mac" = "windows"): string {
   const version = VERSIONS[app];
-  const base = `https://github.com/${APP_DATA[app].github}/releases/download/v${version}`;
-  
+  const repo = APP_DATA[app].github;
+  // Build Desktop releases are on the Build repo (same release includes CLI + Desktop)
+  const releaseTag = app === "buildDesktop" ? `v${VERSIONS.build}` : `v${version}`;
+  const base = `https://github.com/${repo}/releases/download/${releaseTag}`;
+
   if (app === "chat") {
+    if (platform === "mac") {
+      return `${base}/LlamaTalk.Chat_${version}_aarch64.dmg`;
+    }
     return type === "installer"
-      ? `${base}/LlamaTalk_${version}_x64-setup.exe`
-      : `${base}/LlamaTalk_${version}_x64.exe`;
+      ? `${base}/LlamaTalk.Chat_${version}_x64-setup.exe`
+      : `${base}/LlamaTalk.Chat_${version}_x64-setup.exe`;
   }
 
   if (app === "buildDesktop") {
+    if (platform === "mac") {
+      return `${base}/LlamaTalk.Build.Desktop_${version}_aarch64.dmg`;
+    }
     return type === "installer"
-      ? `${base}/LlamaTalk Build Desktop_${version}_x64-setup.exe`
-      : `${base}/LlamaTalk Build Desktop_${version}_x64.exe`;
+      ? `${base}/LlamaTalk.Build.Desktop_${version}_x64-setup.exe`
+      : `${base}/LlamaTalk.Build.Desktop_${version}_x64-setup.exe`;
   }
 
   const name = app === "cli" ? "LlamaTalkCLI" : "LlamaTalkBuild";
   return type === "installer"
-    ? `${base}/${name}_${version}_setup.exe`
+    ? `${base}/${name === "LlamaTalkCLI" ? "LlamaTalk.CLI" : "LlamaTalk.Build"}_${version}_setup.exe`
     : `${base}/${name}_${version}.exe`;
 }
 

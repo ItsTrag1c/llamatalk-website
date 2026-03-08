@@ -22,14 +22,14 @@ export function AppsSection() {
 
         <BuildSpotlight />
 
-        {/* Chat + CLI — Companion tools */}
+        {/* Build Desktop + Chat + CLI — Companion tools */}
         <h3 className="text-lg font-semibold mt-16 mb-2">Companion Tools</h3>
         <p className="text-[var(--text-muted)] text-sm mb-8">
           Same ecosystem, same providers. Pick what fits the moment.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          {(["chat", "cli"] as AppKey[]).map((key) => (
+        <div className="grid md:grid-cols-3 gap-4">
+          {(["buildDesktop", "chat", "cli"] as AppKey[]).map((key) => (
             <AppCard key={key} appKey={key} />
           ))}
         </div>
