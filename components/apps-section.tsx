@@ -139,7 +139,7 @@ function AppCard({ appKey }: { appKey: AppKey }) {
 
         <div className="flex gap-2">
           <a
-            href={getDownloadUrl(appKey)}
+            href={appKey === "cli" ? "#download" : getDownloadUrl(appKey)}
             className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-md bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white transition-colors"
           >
             <Download className="w-3.5 h-3.5" />
