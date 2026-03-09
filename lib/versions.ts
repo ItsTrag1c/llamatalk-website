@@ -60,11 +60,11 @@ export function getDownloadUrl(app: AppKey, type: "installer" | "standalone" = "
 
   if (app === "buildDesktop") {
     if (platform === "mac") {
-      return `${base}/LlamaTalk Build Desktop_${version}_aarch64.dmg`;
+      return `${base}/LlamaTalk.Build.Desktop_${version}_aarch64.dmg`;
     }
     return type === "installer"
-      ? `${base}/LlamaTalk Build Desktop_${version}_x64-setup.exe`
-      : `${base}/LlamaTalk Build Desktop_${version}_x64-setup.exe`;
+      ? `${base}/LlamaTalk.Build.Desktop_${version}_x64-setup.exe`
+      : `${base}/LlamaTalk.Build.Desktop_${version}_x64-setup.exe`;
   }
 
   const name = app === "cli" ? "LlamaTalkCLI" : "LlamaTalkBuild";
