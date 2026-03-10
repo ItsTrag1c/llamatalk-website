@@ -7,9 +7,21 @@ import {
   GitBranch,
   Terminal,
   Code,
+  Send,
+  Sparkles,
 } from "lucide-react";
 
 const features = [
+  {
+    icon: Sparkles,
+    title: "Self-Learning",
+    description: "The agent learns your preferences, patterns, and mistakes across sessions.",
+  },
+  {
+    icon: Send,
+    title: "Telegram Bot",
+    description: "Chat with the Build agent from your phone. All tools work, streaming via message edits.",
+  },
   {
     icon: Server,
     title: "Multi-Server",
@@ -61,7 +73,7 @@ export function Features() {
           Built for privacy and power. Your AI, your data, your control.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (

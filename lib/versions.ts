@@ -27,7 +27,7 @@ export const APP_DATA = {
   build: {
     name: "LlamaTalk Build CLI",
     tagline: "Agentic coding from the terminal",
-    description: "A ReAct-style coding agent with 14 tools, project memory, plan/build modes, and session history. Reads, writes, and executes — so you can focus on the problem, not the plumbing.",
+    description: "A ReAct-style coding agent with 14 tools, self-learning memory, plan/build/recall modes, and Telegram integration. Reads, writes, and executes — so you can focus on the problem, not the plumbing.",
     color: "build",
     github: "ItsTrag1c/LlamaTalk-Build",
     features: ["14 Tools", "ReAct Agent", "Telegram Bot", "Self-Learning"],
@@ -35,7 +35,7 @@ export const APP_DATA = {
   buildDesktop: {
     name: "LlamaTalk Build Desktop",
     tagline: "Agentic coding with a desktop GUI",
-    description: "The LlamaTalk Build agent wrapped in a desktop interface. All the same tools and capabilities, with a visual experience. Available on Windows and macOS.",
+    description: "The LlamaTalk Build agent wrapped in a desktop interface with a home dashboard, onboarding, and Telegram settings. All the same tools and capabilities, with a visual experience.",
     color: "build",
     github: "ItsTrag1c/LlamaTalk-Build",
     features: ["Desktop GUI", "ReAct Agent", "Home Dashboard", "14 Tools"],

@@ -1,6 +1,6 @@
 "use client";
 
-import { Monitor, Terminal, Wrench, ExternalLink, Download, Bot, FileCode, Brain, ShieldCheck } from "lucide-react";
+import { Monitor, Terminal, Wrench, ExternalLink, Download, Bot, FileCode, Brain, ShieldCheck, Send, Sparkles } from "lucide-react";
 import { APP_DATA, VERSIONS, getDownloadUrl, type AppKey } from "@/lib/versions";
 
 const icons: Record<string, typeof Monitor> = {
@@ -44,9 +44,11 @@ function BuildSpotlight() {
 
   const highlights = [
     { icon: Bot, label: "ReAct Agent", desc: "Iterative reason-and-act loop with streaming tool calls" },
+    { icon: Sparkles, label: "Self-Learning", desc: "Learns your preferences and patterns across sessions" },
+    { icon: Send, label: "Telegram Bot", desc: "Chat with the agent from your phone via Telegram" },
     { icon: FileCode, label: "14 Built-in Tools", desc: "File I/O, bash, git, search, web fetch, and more" },
     { icon: Brain, label: "Project Memory", desc: "Persistent memory across sessions, per-project context" },
-    { icon: ShieldCheck, label: "3-Tier Safety", desc: "Tools classified Safe, Moderate, or Dangerous" },
+    { icon: ShieldCheck, label: "3-Tier Safety", desc: "Tools classified Low, Medium, or High risk" },
   ];
 
   return (
