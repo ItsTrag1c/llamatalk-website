@@ -1,8 +1,8 @@
 export const VERSIONS = {
   chat: "0.16.1",
   cli: "0.9.13",
-  build: "2.2.0",
-  buildDesktop: "2.2.0",
+  build: "2.3.0",
+  buildDesktop: "2.3.0",
 } as const;
 
 export type AppKey = keyof typeof VERSIONS;
@@ -30,7 +30,7 @@ export const APP_DATA = {
     description: "A ReAct-style coding agent with 14 tools, project memory, plan/build modes, and session history. Reads, writes, and executes — so you can focus on the problem, not the plumbing.",
     color: "build",
     github: "ItsTrag1c/LlamaTalk-Build",
-    features: ["14 Tools", "ReAct Agent", "Project Memory", "Plan & Build Modes"],
+    features: ["14 Tools", "ReAct Agent", "Telegram Bot", "Self-Learning"],
   },
   buildDesktop: {
     name: "LlamaTalk Build Desktop",
@@ -38,7 +38,7 @@ export const APP_DATA = {
     description: "The LlamaTalk Build agent wrapped in a desktop interface. All the same tools and capabilities, with a visual experience. Available on Windows and macOS.",
     color: "build",
     github: "ItsTrag1c/LlamaTalk-Build",
-    features: ["Desktop GUI", "ReAct Agent", "Windows & macOS", "14 Tools"],
+    features: ["Desktop GUI", "ReAct Agent", "Home Dashboard", "14 Tools"],
   },
 } as const;
 
