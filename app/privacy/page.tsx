@@ -74,17 +74,17 @@ export default function PrivacyPolicy() {
             </h2>
             <p>
               This website (clanksuite.dev) is a static site hosted on
-              Vercel. We do not use cookies, analytics scripts, or tracking
-              pixels. Vercel may collect standard server logs (IP address,
+              GitHub Pages. We do not use cookies, analytics scripts, or tracking
+              pixels. GitHub may collect standard server logs (IP address,
               browser user agent, page requested) as part of hosting
               infrastructure. See{" "}
               <a
-                href="https://vercel.com/legal/privacy-policy"
+                href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--accent)] hover:underline"
               >
-                Vercel&apos;s Privacy Policy
+                GitHub&apos;s Privacy Statement
               </a>{" "}
               for details.
             </p>
