@@ -1,6 +1,6 @@
 export const VERSIONS = {
-  cli: "2.5.18",
-  desktop: "2.4.15",
+  cli: "2.5.19",
+  desktop: "2.4.16",
 } as const;
 
 export type AppKey = keyof typeof VERSIONS;
