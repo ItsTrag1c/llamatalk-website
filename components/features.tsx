@@ -6,7 +6,6 @@ import {
   Cpu,
   GitBranch,
   Terminal,
-  Users,
   Send,
   Sparkles,
 } from "lucide-react";
@@ -56,11 +55,6 @@ const features = [
     icon: Terminal,
     title: "14 Built-in Tools",
     description: "File I/O, bash, search, install, web fetch, package management, and more.",
-  },
-  {
-    icon: Users,
-    title: "Sub Agents",
-    description: "Delegate tasks to specialized sub-agents with their own roles, tools, and context.",
   },
 ];
 

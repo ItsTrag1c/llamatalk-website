@@ -27,10 +27,10 @@ export const APP_DATA = {
   build: {
     name: "Clank Build CLI",
     tagline: "Agentic coding from the terminal",
-    description: "A ReAct-style coding agent with manager/sub-agent architecture, 14 tools, self-learning memory, 4 modes (Build, Plan, Q&A, Manage), and Telegram integration. Reads, writes, and executes — so you can focus on the problem, not the plumbing.",
+    description: "A ReAct-style coding agent with 14 tools, self-learning memory, 4 modes (Build, Plan, Q&A, Manage), and Telegram integration. Reads, writes, and executes — so you can focus on the problem, not the plumbing.",
     color: "build",
     github: "ItsTrag1c/Clank-Build",
-    features: ["Sub-Agents", "4 Modes", "14 Tools", "ReAct Agent", "Telegram Bot", "Self-Learning"],
+    features: ["4 Modes", "14 Tools", "ReAct Agent", "Telegram Bot", "Self-Learning"],
   },
   buildDesktop: {
     name: "Clank Build Desktop",
