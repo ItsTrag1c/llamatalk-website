@@ -1,6 +1,6 @@
 export const VERSIONS = {
-  cli: "2.5.19",
-  desktop: "2.4.16",
+  cli: "2.5.20",
+  desktop: "2.4.17",
 } as const;
 
 export type AppKey = keyof typeof VERSIONS;
@@ -8,16 +8,16 @@ export type AppKey = keyof typeof VERSIONS;
 export const APP_DATA = {
   cli: {
     name: "Clank CLI",
-    tagline: "Agentic coding from the terminal",
-    description: "A ReAct-style coding agent with 14 tools, self-learning memory, 3 modes (Build, Plan, Q&A), and Telegram integration. Reads, writes, and executes — so you can focus on the problem, not the plumbing.",
+    tagline: "Agentic assistant from the terminal",
+    description: "A ReAct-style agent with 14 tools, self-learning memory, 3 modes (Build, Plan, Q&A), and Telegram integration. Works with local models and cloud providers — so you can focus on the problem, not the plumbing.",
     color: "build",
     github: "ItsTrag1c/Clank",
     features: ["3 Modes", "14 Tools", "ReAct Agent", "Telegram Bot", "Self-Learning"],
   },
   desktop: {
     name: "Clank Desktop",
-    tagline: "Agentic coding with a desktop GUI",
-    description: "The Clank agent wrapped in a desktop interface with 3 modes, a home dashboard, onboarding, and Telegram settings. All the same tools and capabilities, with a visual experience.",
+    tagline: "Agentic assistant with a desktop GUI",
+    description: "The Clank agent wrapped in a desktop interface with 3 modes, a home dashboard, onboarding, and Telegram settings. Local models and cloud providers, same tools — with a visual experience.",
     color: "build",
     github: "ItsTrag1c/Clank",
     features: ["3 Modes", "Desktop GUI", "ReAct Agent", "Home Dashboard", "14 Tools"],
