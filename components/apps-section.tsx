@@ -1,6 +1,6 @@
 "use client";
 
-import { Monitor, Terminal, Download, ExternalLink, Bot, FileCode, Brain, ShieldCheck, Send, Sparkles } from "lucide-react";
+import { Monitor, Terminal, Download, ExternalLink, Bot, FileCode, Brain, ShieldCheck, Send, Sparkles, Server } from "lucide-react";
 import { APP_DATA, VERSIONS, getDownloadUrl } from "@/lib/versions";
 
 export function AppsSection() {
@@ -41,12 +41,12 @@ export function AppsSection() {
         </div>
 
         {/* Two interfaces */}
-        <h3 className="text-lg font-semibold mb-2">Choose Your Interface</h3>
+        <h3 className="text-lg font-semibold mb-2">The Suite</h3>
         <p className="text-[var(--text-muted)] text-sm mb-6">
-          Same agent, same tools, same intelligence. Pick the experience that fits your workflow.
+          Agentic tools for developers and homelabbers. Pick the experience that fits your workflow.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-3 gap-4">
           {/* Terminal (CLI) */}
           <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
             <div className="flex items-center gap-3 mb-3">
@@ -105,6 +105,39 @@ export function AppsSection() {
               </a>
               <a
                 href={`https://github.com/${APP_DATA.desktop.github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm rounded-lg border border-[var(--border)] hover:border-[var(--border-hover)] hover:bg-[var(--surface-2)] text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          {/* Home Lab Autopilot */}
+          <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-[rgba(88,166,255,0.1)] border border-[rgba(88,166,255,0.2)] flex items-center justify-center">
+                <Server className="w-5 h-5 text-[#58a6ff]" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-[var(--text)]">Autopilot</h4>
+                <span className="text-xs font-mono text-[var(--text-dim)]">v{VERSIONS.autopilot}</span>
+              </div>
+            </div>
+            <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-5">
+              Manage your homelab with natural language. Proxmox, TrueNAS, Docker, and Home Assistant — just ask.
+            </p>
+            <div className="flex gap-2">
+              <a
+                href="/autopilot"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white transition-colors"
+              >
+                Learn More
+              </a>
+              <a
+                href={`https://github.com/${APP_DATA.autopilot.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm rounded-lg border border-[var(--border)] hover:border-[var(--border-hover)] hover:bg-[var(--surface-2)] text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"

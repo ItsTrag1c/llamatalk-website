@@ -7,6 +7,7 @@ import { Github, Menu, X } from "lucide-react";
 const links = [
   { label: "About", href: "#about" },
   { label: "Features", href: "#features" },
+  { label: "Autopilot", href: "/autopilot" },
   { label: "Download", href: "#download" },
 ];
 

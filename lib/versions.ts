@@ -1,6 +1,7 @@
 export const VERSIONS = {
   cli: "2.5.20",
   desktop: "2.4.17",
+  autopilot: "0.1.0",
 } as const;
 
 export type AppKey = keyof typeof VERSIONS;
@@ -21,6 +22,14 @@ export const APP_DATA = {
     color: "build",
     github: "ItsTrag1c/Clank",
     features: ["3 Modes", "Desktop GUI", "ReAct Agent", "Home Dashboard", "14 Tools"],
+  },
+  autopilot: {
+    name: "Home Lab Autopilot",
+    tagline: "Natural language interface for your homelab",
+    description: "AI-powered homelab management. Control Proxmox, TrueNAS, Docker, and Home Assistant with plain English. No more memorizing CLI commands — just ask.",
+    color: "build",
+    github: "ItsTrag1c/homelab-autopilot",
+    features: ["Proxmox VE", "TrueNAS", "Docker", "Home Assistant", "Natural Language"],
   },
 } as const;
 
