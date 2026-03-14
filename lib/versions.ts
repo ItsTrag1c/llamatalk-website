@@ -1,6 +1,6 @@
 export const VERSIONS = {
-  cli: "2.5.20",
-  desktop: "2.4.17",
+  cli: "2.5.21",
+  desktop: "2.4.18",
   autopilot: "0.1.0",
 } as const;
 
