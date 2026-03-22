@@ -1,27 +1,21 @@
 export const VERSIONS = {
+  clank: "0.1.0",
+  autopilot: "0.3.0",
+  // Legacy (archived)
   cli: "2.7.0",
   desktop: "2.6.1",
-  autopilot: "0.3.0",
 } as const;
 
 export type AppKey = keyof typeof VERSIONS;
 
 export const APP_DATA = {
-  cli: {
-    name: "Clank CLI",
-    tagline: "Agentic assistant from the terminal",
-    description: "A ReAct-style agent with 14 tools, self-learning memory, 3 modes (Build, Plan, Q&A), and Telegram integration. Works with local models and cloud providers — so you can focus on the problem, not the plumbing.",
+  clank: {
+    name: "Clank",
+    tagline: "Local-first AI agent gateway",
+    description: "A personal AI gateway — one daemon, many frontends. Multi-agent, multi-channel (CLI, Web, Telegram, Discord), optimized for local models. Open-source alternative to OpenClaw.",
     color: "build",
     github: "ItsTrag1c/Clank",
-    features: ["3 Modes", "14 Tools", "ReAct Agent", "Telegram Bot", "Self-Learning"],
-  },
-  desktop: {
-    name: "Clank Desktop",
-    tagline: "Agentic assistant with a desktop GUI",
-    description: "The Clank agent wrapped in a desktop interface with 3 modes, a home dashboard, onboarding, and Telegram settings. Local models and cloud providers, same tools — with a visual experience.",
-    color: "build",
-    github: "ItsTrag1c/Clank",
-    features: ["3 Modes", "Desktop GUI", "ReAct Agent", "Home Dashboard", "14 Tools"],
+    features: ["Multi-Agent", "Multi-Channel", "Local-First", "Gateway", "Plugins"],
   },
   autopilot: {
     name: "Home Lab Autopilot",
@@ -31,26 +25,48 @@ export const APP_DATA = {
     github: "ItsTrag1c/homelab-autopilot",
     features: ["Proxmox VE", "TrueNAS", "Docker", "Home Assistant", "Natural Language"],
   },
+  // Legacy (archived — kept for backward compat with existing download links)
+  cli: {
+    name: "Clank CLI (Legacy)",
+    tagline: "Archived — replaced by Clank Gateway",
+    description: "The original Clank CLI agent. Archived March 2026. Use the new Clank gateway instead.",
+    color: "build",
+    github: "ItsTrag1c/Clank-Legacy",
+    features: ["Archived"],
+  },
+  desktop: {
+    name: "Clank Desktop (Legacy)",
+    tagline: "Archived — replaced by Clank Gateway",
+    description: "The original Clank Desktop app. Archived March 2026. Use the new Clank gateway instead.",
+    color: "build",
+    github: "ItsTrag1c/Clank-Legacy",
+    features: ["Archived"],
+  },
 } as const;
 
 export function getDownloadUrl(app: AppKey, type: "installer" | "standalone" = "installer", platform: "windows" | "mac" = "windows"): string {
   const version = VERSIONS[app];
   const repo = APP_DATA[app].github;
-  // Desktop releases are on the same repo (same release includes CLI + Desktop)
+
+  // Clank Gateway — npm install for now, binary releases later
+  if (app === "clank") {
+    return `https://github.com/${repo}`;
+  }
+
+  // Legacy entries point to Clank-Legacy releases
   const releaseTag = `v${app === "desktop" ? VERSIONS.cli : version}`;
-  const base = `https://github.com/${repo}/releases/download/${releaseTag}`;
+  const base = `https://github.com/ItsTrag1c/Clank-Legacy/releases/download/${releaseTag}`;
 
   if (app === "desktop") {
     if (platform === "mac") {
       return `${base}/Clank.Desktop_${version}_aarch64.dmg`;
     }
-    return type === "installer"
-      ? `${base}/Clank.Desktop_${version}_x64-setup.exe`
-      : `${base}/Clank.Desktop_${version}_x64-setup.exe`;
+    return `${base}/Clank.Desktop_${version}_x64-setup.exe`;
   }
 
   if (app === "autopilot") {
-    return `${base}/Home_Lab_Autopilot_${version}_setup.exe`;
+    const autopilotBase = `https://github.com/${repo}/releases/download/v${version}`;
+    return `${autopilotBase}/Home_Lab_Autopilot_${version}_setup.exe`;
   }
 
   if (platform === "mac") {
