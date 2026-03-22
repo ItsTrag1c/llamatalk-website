@@ -20,6 +20,8 @@ function RedditIcon({ className }: { className?: string }) {
 
 const repos = [
   { name: "Clank", href: "https://github.com/ItsTrag1c/Clank" },
+  { name: "Home Lab Autopilot", href: "https://github.com/ItsTrag1c/homelab-autopilot" },
+  { name: "Clank Legacy", href: "https://github.com/ItsTrag1c/Clank-Legacy" },
 ];
 
 export function Footer() {
@@ -33,7 +35,7 @@ export function Footer() {
               <span className="text-sm font-medium text-[var(--text)]">Clank</span>
             </div>
             <p className="text-xs text-[var(--text-dim)] max-w-xs leading-relaxed">
-              Agentic assistant. Local models &amp; cloud providers. Zero telemetry.
+              Local-first AI agent gateway. Open-source alternative to OpenClaw.
             </p>
           </div>
 

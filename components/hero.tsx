@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Download, Github, Wrench } from "lucide-react";
-import { VERSIONS, getDownloadUrl } from "@/lib/versions";
+import { Download, Terminal } from "lucide-react";
 
 export function Hero() {
   return (
@@ -20,23 +19,23 @@ export function Hero() {
         </div>
 
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--text)]">
-          Your Code.{" "}
-          <span className="text-[var(--accent)]">Your Rules.</span>
+          Your AI.{" "}
+          <span className="text-[var(--accent)]">Your Machine.</span>
         </h1>
 
         <p className="mt-4 text-lg text-[var(--text-muted)] max-w-xl mx-auto leading-relaxed">
-          An agentic assistant powered by local models and cloud providers. Reads,
-          writes, and executes with self-learning memory, 14 tools, and zero
-          telemetry. Terminal or desktop — your choice.
+          A local-first AI agent gateway. One daemon, many frontends —
+          CLI, browser, Telegram, Discord. Multi-agent, self-configuring,
+          optimized for local models. Zero telemetry.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href={getDownloadUrl("cli")}
+            href="https://github.com/ItsTrag1c/Clank"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm font-medium transition-colors"
           >
             <Download className="w-4 h-4" />
-            Download Clank
+            Get Started
           </a>
           <a
             href="#features"
@@ -46,12 +45,18 @@ export function Hero() {
           </a>
         </div>
 
+        <div className="mt-6">
+          <code className="text-xs text-[var(--text-dim)] bg-[var(--surface)] px-4 py-2 rounded-lg border border-[var(--border)]">
+            npm install -g clank && clank setup
+          </code>
+        </div>
+
         <div className="mt-10 flex items-center justify-center gap-6 text-xs text-[var(--text-dim)]">
           <span>Local-first</span>
           <span className="w-1 h-1 rounded-full bg-[var(--border)]" />
           <span>Zero telemetry</span>
           <span className="w-1 h-1 rounded-full bg-[var(--border)]" />
-          <span>14 tools</span>
+          <span>18 tools</span>
           <span className="w-1 h-1 rounded-full bg-[var(--border)]" />
           <span>MIT licensed</span>
         </div>
