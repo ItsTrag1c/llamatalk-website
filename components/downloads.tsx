@@ -22,7 +22,7 @@ export function Downloads() {
             </div>
           </div>
           <div className="bg-[var(--bg)] rounded-lg p-4 font-mono text-sm text-[var(--text-muted)] border border-[var(--border)]">
-            <div className="mb-1"><span className="text-[var(--text-dim)]">$</span> npm install -g clank</div>
+            <div className="mb-1"><span className="text-[var(--text-dim)]">$</span> npm install -g @tractorscorch/clank</div>
             <div className="mb-1"><span className="text-[var(--text-dim)]">$</span> clank setup</div>
             <div><span className="text-[var(--text-dim)]">$</span> clank</div>
           </div>

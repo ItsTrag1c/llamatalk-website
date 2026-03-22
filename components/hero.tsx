@@ -47,7 +47,7 @@ export function Hero() {
 
         <div className="mt-6">
           <code className="text-xs text-[var(--text-dim)] bg-[var(--surface)] px-4 py-2 rounded-lg border border-[var(--border)]">
-            npm install -g clank && clank setup
+            npm install -g @tractorscorch/clank && clank setup
           </code>
         </div>
 
