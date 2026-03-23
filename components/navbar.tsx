@@ -21,10 +21,10 @@ function RedditIcon({ className }: { className?: string }) {
 }
 
 const links = [
-  { label: "About", href: "#about" },
-  { label: "Features", href: "#features" },
+  { label: "About", href: "/#about" },
+  { label: "Features", href: "/#features" },
   { label: "Autopilot", href: "/autopilot" },
-  { label: "Download", href: "#download" },
+  { label: "Download", href: "/#download" },
 ];
 
 export function Navbar() {
@@ -33,7 +33,7 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] bg-[rgba(10,10,10,0.8)] backdrop-blur-md">
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5 group">
+        <a href="/" className="flex items-center gap-2.5 group">
           <Image src="/llama.png" alt="Clank" width={28} height={28} className="rounded-md" />
           <span className="font-semibold text-[var(--text)] text-sm">
             Clank
