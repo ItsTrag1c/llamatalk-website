@@ -1,5 +1,5 @@
 export const VERSIONS = {
-  clank: "1.4.0",
+  clank: "1.4.1",
   autopilot: "0.3.0",
   // Legacy (archived)
   cli: "2.7.0",
