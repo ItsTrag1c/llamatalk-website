@@ -98,7 +98,7 @@ export function AppsSection() {
               </div>
               <div>
                 <h4 className="font-semibold text-[var(--text)]">Wrench</h4>
-                <span className="text-xs font-mono text-[var(--text-dim)]">v4 — 72/75</span>
+                <span className="text-xs font-mono text-[var(--text-dim)]">v5 — 113/120</span>
               </div>
             </div>
             <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-3">

@@ -15,22 +15,25 @@ import {
 export const metadata: Metadata = {
   title: "Wrench — Clank Labs",
   description:
-    "Purpose-built agentic AI model. Fine-tuned for tool calling, error recovery, and system prompt following. Scores 72/75 on agentic benchmarks — matching Claude Sonnet. Free to run on your own hardware.",
+    "Purpose-built agentic AI model. Fine-tuned for tool calling, error recovery, and system prompt following. Scores 113/120 on agentic benchmarks — matching Claude Sonnet. Free to run on your own hardware.",
 };
 
 const benchmarks = [
   { category: "Basic Tool Use", score: 15, max: 15 },
   { category: "Multi-Step Tasks", score: 14, max: 15 },
-  { category: "Error Recovery", score: 14, max: 15 },
+  { category: "Error Recovery", score: 13, max: 15 },
   { category: "Response Quality", score: 15, max: 15 },
   { category: "System Prompt Following", score: 14, max: 15 },
+  { category: "Planning & Reasoning", score: 14, max: 15 },
+  { category: "Tool Format Correctness", score: 13, max: 15 },
+  { category: "Safety & Restraint", score: 15, max: 15 },
 ];
 
 const comparisons = [
-  { model: "Claude Sonnet 4.5", score: "~73/75", tier: "Frontier" },
-  { model: "Wrench v4", score: "72/75", tier: "Clank Labs" },
-  { model: "GPT-4o", score: "~70/75", tier: "Frontier" },
-  { model: "Base Qwen 3.5 35B", score: "~40/75", tier: "Base" },
+  { model: "Claude Sonnet", score: "~114/120", tier: "Frontier" },
+  { model: "Wrench v5", score: "113/120", tier: "Clank Labs" },
+  { model: "GPT-4o", score: "~110/120", tier: "Frontier" },
+  { model: "Base Qwen 3.5 35B", score: "~60/120", tier: "Base" },
 ];
 
 const features = [
@@ -52,7 +55,7 @@ const features = [
   {
     icon: BarChart3,
     title: "Sonnet-Tier Performance",
-    desc: "72/75 on our agentic benchmark — matching Claude Sonnet 4.5. On hardware you own, for free.",
+    desc: "113/120 on our agentic benchmark — matching Claude Sonnet. On hardware you own, for free.",
   },
   {
     icon: Terminal,
@@ -83,7 +86,7 @@ export default function WrenchPage() {
             <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto mb-8">
               A purpose-built agentic AI model. Fine-tuned on Qwen3.5-35B-A3B for tool calling,
               error recovery, and system prompt following. Scores{" "}
-              <span className="text-[var(--accent)] font-semibold">72/75</span> on
+              <span className="text-[var(--accent)] font-semibold">113/120</span> on
               agentic benchmarks — matching Claude Sonnet.
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap">
@@ -105,6 +108,15 @@ export default function WrenchPage() {
                 <ExternalLink className="w-4 h-4" />
                 Use with Clank
               </a>
+              <a
+                href="https://github.com/ItsTrag1c/wrench-training-data"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text)] hover:border-[var(--border-hover)] transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+                Training Data
+              </a>
             </div>
           </div>
         </section>
@@ -116,14 +128,14 @@ export default function WrenchPage() {
               Benchmark Results
             </h2>
             <p className="text-sm text-[var(--text-muted)] mb-8 text-center">
-              25-prompt agentic evaluation across 5 categories. Scored 0-3 per prompt.
+              40-prompt agentic evaluation across 8 categories. Scored 0-3 per prompt.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Category scores */}
               <div className="space-y-4">
                 <h3 className="text-sm font-medium text-[var(--text-muted)] mb-3">
-                  Wrench v4 — Category Breakdown
+                  Wrench v5 — Category Breakdown
                 </h3>
                 {benchmarks.map((b) => (
                   <div key={b.category}>
@@ -143,7 +155,7 @@ export default function WrenchPage() {
                 ))}
                 <div className="pt-2 border-t border-[var(--border)] flex justify-between text-sm font-semibold">
                   <span className="text-[var(--text)]">Total</span>
-                  <span className="text-[var(--accent)]">72/75 (96%)</span>
+                  <span className="text-[var(--accent)]">113/120 (94%)</span>
                 </div>
               </div>
 
@@ -169,13 +181,13 @@ export default function WrenchPage() {
                         <tr
                           key={c.model}
                           className={`border-t border-[var(--border)] ${
-                            c.model === "Wrench v4" ? "bg-[var(--accent)]/5" : ""
+                            c.model === "Wrench v5" ? "bg-[var(--accent)]/5" : ""
                           }`}
                         >
                           <td className="px-4 py-2.5">
                             <span
                               className={
-                                c.model === "Wrench v4"
+                                c.model === "Wrench v5"
                                   ? "text-[var(--accent)] font-semibold"
                                   : "text-[var(--text)]"
                               }
@@ -188,7 +200,7 @@ export default function WrenchPage() {
                           </td>
                           <td
                             className={`text-right px-4 py-2.5 font-mono ${
-                              c.model === "Wrench v4"
+                              c.model === "Wrench v5"
                                 ? "text-[var(--accent)] font-semibold"
                                 : "text-[var(--text-muted)]"
                             }`}
@@ -286,12 +298,12 @@ export default function WrenchPage() {
                     ["Base Model", "Qwen3.5-35B-A3B (Alibaba Cloud)"],
                     ["Architecture", "Mixture-of-Experts — 35B total, 3B active per inference"],
                     ["Fine-Tune Method", "LoRA (rank 64, alpha 128) via HuggingFace PEFT"],
-                    ["Training Data", "1,113 examples across 15 categories"],
+                    ["Training Data", "1,147 examples across 15 categories"],
                     ["Quantization", "Q4_K_M GGUF (~20GB)"],
                     ["Context Window", "8,192 tokens"],
                     ["Min GPU", "16GB VRAM (RTX 4060 Ti, RX 7800 XT, etc.)"],
                     ["License", "Apache 2.0"],
-                    ["Benchmark", "72/75 (96%) on 25-prompt agentic evaluation"],
+                    ["Benchmark", "113/120 (94%) on 40-prompt agentic evaluation"],
                   ].map(([label, value]) => (
                     <tr key={label} className="border-t border-[var(--border)] first:border-t-0">
                       <td className="px-4 py-2.5 text-[var(--text-muted)] font-medium w-1/3">
