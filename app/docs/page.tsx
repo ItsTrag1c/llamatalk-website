@@ -49,6 +49,11 @@ clank`}</CodeBlock>
           <p className="text-[var(--text-muted)] mt-3 text-sm">
             Setup auto-detects your local models, configures the gateway, and gets you chatting in under 2 minutes.
           </p>
+          <div className="mt-4 p-3 rounded-md border border-[var(--border)] bg-[var(--surface)]">
+            <p className="text-[var(--text-muted)] text-sm">
+              <span className="font-semibold text-[var(--text)]">Security Notice:</span> Clank gives AI agents full access to your file system, shell, and connected services. We strongly recommend running it on <span className="font-semibold text-[var(--text)]">dedicated hardware</span> (dev machine, VM, or container) rather than on systems with sensitive personal data.
+            </p>
+          </div>
         </Section>
 
         <Section title="Providers">
