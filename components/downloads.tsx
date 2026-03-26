@@ -58,18 +58,6 @@ export function Downloads() {
               <p className="text-xs text-[var(--text-muted)]">What&apos;s new in v{VERSIONS.clank}</p>
             </div>
           </a>
-          <a
-            href="https://github.com/ItsTrag1c/Clank-Legacy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 p-4 rounded-lg border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--border-hover)] transition-colors"
-          >
-            <ExternalLink className="w-4 h-4 text-[var(--text-dim)]" />
-            <div>
-              <p className="text-sm font-medium text-[var(--text)]">Legacy</p>
-              <p className="text-xs text-[var(--text-muted)]">Archived CLI v2.7 + Desktop v2.6</p>
-            </div>
-          </a>
         </div>
       </div>
     </section>

@@ -21,7 +21,6 @@ function RedditIcon({ className }: { className?: string }) {
 const repos = [
   { name: "Clank", href: "https://github.com/ItsTrag1c/Clank" },
   { name: "Home Lab Autopilot", href: "https://github.com/ItsTrag1c/homelab-autopilot" },
-  { name: "Clank Legacy", href: "https://github.com/ItsTrag1c/Clank-Legacy" },
 ];
 
 export function Footer() {

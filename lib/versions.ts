@@ -1,9 +1,6 @@
 export const VERSIONS = {
   clank: "1.7.3",
   autopilot: "0.3.0",
-  // Legacy (archived)
-  cli: "2.7.0",
-  desktop: "2.6.1",
 } as const;
 
 export type AppKey = keyof typeof VERSIONS;
@@ -25,23 +22,6 @@ export const APP_DATA = {
     github: "ItsTrag1c/homelab-autopilot",
     features: ["Proxmox VE", "TrueNAS", "Docker", "Home Assistant", "Natural Language"],
   },
-  // Legacy (archived — kept for backward compat with existing download links)
-  cli: {
-    name: "Clank CLI (Legacy)",
-    tagline: "Archived — replaced by Clank Gateway",
-    description: "The original Clank CLI agent. Archived March 2026. Use the new Clank gateway instead.",
-    color: "build",
-    github: "ItsTrag1c/Clank-Legacy",
-    features: ["Archived"],
-  },
-  desktop: {
-    name: "Clank Desktop (Legacy)",
-    tagline: "Archived — replaced by Clank Gateway",
-    description: "The original Clank Desktop app. Archived March 2026. Use the new Clank gateway instead.",
-    color: "build",
-    github: "ItsTrag1c/Clank-Legacy",
-    features: ["Archived"],
-  },
 } as const;
 
 export function getDownloadUrl(app: AppKey, type: "installer" | "standalone" = "installer", platform: "windows" | "mac" = "windows"): string {
@@ -53,29 +33,12 @@ export function getDownloadUrl(app: AppKey, type: "installer" | "standalone" = "
     return `https://github.com/${repo}`;
   }
 
-  // Legacy entries point to Clank-Legacy releases
-  const releaseTag = `v${app === "desktop" ? VERSIONS.cli : version}`;
-  const base = `https://github.com/ItsTrag1c/Clank-Legacy/releases/download/${releaseTag}`;
-
-  if (app === "desktop") {
-    if (platform === "mac") {
-      return `${base}/Clank.Desktop_${version}_aarch64.dmg`;
-    }
-    return `${base}/Clank.Desktop_${version}_x64-setup.exe`;
-  }
-
   if (app === "autopilot") {
     const autopilotBase = `https://github.com/${repo}/releases/download/v${version}`;
     return `${autopilotBase}/Home_Lab_Autopilot_${version}_setup.exe`;
   }
 
-  if (platform === "mac") {
-    return `${base}/Clank`;
-  }
-
-  return type === "installer"
-    ? `${base}/Clank_${version}_setup.exe`
-    : `${base}/Clank_${version}.exe`;
+  return `https://github.com/${repo}`;
 }
 
 export async function fetchLatestVersion(repo: string): Promise<string | null> {
