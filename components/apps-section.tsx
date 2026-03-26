@@ -39,13 +39,13 @@ export function AppsSection() {
           })}
         </div>
 
-        {/* The Suite */}
-        <h3 className="text-lg font-semibold mb-2">The Suite</h3>
+        {/* The Lab */}
+        <h3 className="text-lg font-semibold mb-2">The Lab</h3>
         <p className="text-[var(--text-muted)] text-sm mb-6">
-          AI tools for developers and homelabbers. Local-first, open source, MIT licensed.
+          AI tools and models for developers and homelabbers. Local-first, open source, Apache 2.0.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-3 gap-4">
           {/* Clank Gateway */}
           <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
             <div className="flex items-center gap-3 mb-3">
@@ -86,6 +86,48 @@ export function AppsSection() {
               >
                 <ExternalLink className="w-4 h-4" />
                 GitHub
+              </a>
+            </div>
+          </div>
+
+          {/* Wrench Model */}
+          <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-[rgba(249,115,22,0.1)] border border-[rgba(249,115,22,0.2)] flex items-center justify-center">
+                <Brain className="w-5 h-5 text-[var(--accent)]" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-[var(--text)]">Wrench</h4>
+                <span className="text-xs font-mono text-[var(--text-dim)]">v4 — 72/75</span>
+              </div>
+            </div>
+            <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-3">
+              Purpose-built agentic model. Fine-tuned for tool calling, error recovery, and
+              system prompt following. Matches Claude Sonnet on coding tasks — runs free on
+              your GPU.
+            </p>
+            <div className="flex flex-wrap gap-1.5 mb-5">
+              {["Sonnet-Tier", "3B Active", "16GB VRAM", "GGUF", "Apache 2.0"].map((tag) => (
+                <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-[rgba(249,115,22,0.1)] border border-[rgba(249,115,22,0.15)] text-[var(--accent)]">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-2">
+              <a
+                href="/wrench"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white transition-colors"
+              >
+                Learn More
+              </a>
+              <a
+                href="https://huggingface.co/ClankLabs/Wrench-35B-A3B-Q4_K_M-GGUF"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm rounded-lg border border-[var(--border)] hover:border-[var(--border-hover)] hover:bg-[var(--surface-2)] text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+                HuggingFace
               </a>
             </div>
           </div>
