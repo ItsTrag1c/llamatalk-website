@@ -263,7 +263,7 @@ export default function WrenchPage() {
                   Option B: llama.cpp
                 </h3>
                 <div className="bg-[var(--surface)] border border-[var(--border)] rounded-lg p-4 font-mono text-sm text-[var(--text-muted)] space-y-1">
-                  <p>./llama-server -m wrench-Q4_K_M.gguf -c 8192 -ngl 99</p>
+                  <p>./llama-server -m Wrench-35B-A3B-Q4_K_M-GGUF.gguf -c 8192 -ngl 99</p>
                   <p></p>
                   <p className="text-[var(--text-dim)]"># Serves an OpenAI-compatible API on port 8080</p>
                   <p className="text-[var(--text-dim)]"># Point any app at http://localhost:8080/v1</p>
