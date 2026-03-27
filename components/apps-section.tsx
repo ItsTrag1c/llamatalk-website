@@ -98,16 +98,16 @@ export function AppsSection() {
               </div>
               <div>
                 <h4 className="font-semibold text-[var(--text)]">Wrench</h4>
-                <span className="text-xs font-mono text-[var(--text-dim)]">v5 — 113/120</span>
+                <span className="text-xs font-mono text-[var(--text-dim)]">35B &amp; 8B</span>
               </div>
             </div>
             <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-3">
-              Purpose-built agentic model. Fine-tuned for tool calling, error recovery, and
-              system prompt following. Matches Claude Sonnet on coding tasks — runs free on
-              your GPU.
+              Purpose-built agentic models. 35B scores 113/120 (Sonnet-tier, 16GB VRAM).
+              8B scores 92/120 (8GB VRAM). Fine-tuned for tool calling, error recovery,
+              and system prompt following.
             </p>
             <div className="flex flex-wrap gap-1.5 mb-5">
-              {["Sonnet-Tier", "3B Active", "16GB VRAM", "GGUF", "Apache 2.0"].map((tag) => (
+              {["35B MoE", "8B Dense", "8–16GB VRAM", "GGUF", "Apache 2.0"].map((tag) => (
                 <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-[rgba(249,115,22,0.1)] border border-[rgba(249,115,22,0.15)] text-[var(--accent)]">
                   {tag}
                 </span>
