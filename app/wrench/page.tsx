@@ -114,7 +114,7 @@ export default function WrenchPage() {
                 35B on HuggingFace
               </a>
               <a
-                href="https://huggingface.co/ClankLabs/Wrench-8B-Q4_K_M-GGUF"
+                href="https://huggingface.co/ClankLabs/Wrench-9B-Q4_K_M-GGUF"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--accent)] text-black font-medium hover:opacity-90 transition-opacity"
@@ -334,7 +334,7 @@ export default function WrenchPage() {
                   <p>./llama-server -m Wrench-35B-A3B-Q4_K_M-GGUF.gguf -c 8192 -ngl 99</p>
                   <p></p>
                   <p className="text-[var(--text-dim)]"># 8B model:</p>
-                  <p>./llama-server -m Wrench-8B-Q4_K_M-GGUF.gguf -c 8192 -ngl 99</p>
+                  <p>./llama-server -m Wrench-9B-Q4_K_M-GGUF.gguf -c 8192 -ngl 99</p>
                   <p></p>
                   <p className="text-[var(--text-dim)]"># Serves an OpenAI-compatible API on port 8080</p>
                   <p className="text-[var(--text-dim)]"># Point any app at http://localhost:8080/v1</p>
