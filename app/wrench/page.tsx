@@ -387,7 +387,7 @@ export default function WrenchPage() {
                   <table className="w-full text-sm">
                     <tbody>
                       {[
-                        ["Base Model", "Qwen3-8B"],
+                        ["Base Model", "Qwen3.5-9B"],
                         ["Architecture", "Dense — 8B parameters"],
                         ["Fine-Tune", "LoRA (rank 64, alpha 128)"],
                         ["Training Data", "1,147 examples, 15 categories"],
