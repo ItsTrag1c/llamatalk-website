@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Wrench — Clank Labs",
   description:
-    "Purpose-built agentic AI models. Wrench 35B scores 118/120 (matches Claude Opus) on 16GB VRAM. Wrench 9B scores 114/120 (matches Claude Sonnet) on 8GB VRAM. Fine-tuned for tool calling, error recovery, and system prompt following.",
+    "Purpose-built agentic AI models. Wrench 35B scores 118/120 on our benchmark + 82% on BFCL (Berkeley Function Calling Leaderboard). 16GB VRAM. Wrench 9B scores 114/120 on 8GB VRAM. Fine-tuned for tool calling, error recovery, and system prompt following.",
 };
 
 const benchmarks35B = [
@@ -49,6 +49,16 @@ const comparisons = [
   { model: "Base Qwen 3.5 35B", score: "~60/120", tier: "Base" },
 ];
 
+const bfclScores = [
+  { category: "Simple (Python)", accuracy: "84.8%", correct: 339, total: 400 },
+  { category: "Simple (Java)", accuracy: "44.0%", correct: 44, total: 100 },
+  { category: "Simple (JavaScript)", accuracy: "56.0%", correct: 28, total: 50 },
+  { category: "Multiple", accuracy: "84.5%", correct: 169, total: 200 },
+  { category: "Parallel", accuracy: "85.0%", correct: 170, total: 200 },
+  { category: "Parallel Multiple", accuracy: "82.5%", correct: 165, total: 200 },
+  { category: "Irrelevance Detection", accuracy: "88.8%", correct: 213, total: 240 },
+];
+
 const features = [
   {
     icon: Zap,
@@ -68,7 +78,7 @@ const features = [
   {
     icon: BarChart3,
     title: "Proven Performance",
-    desc: "35B scores 118/120 (Opus-tier). 9B scores 114/120 (95%). On hardware you own, for free.",
+    desc: "35B scores 118/120 (Opus-tier) + 82% on BFCL. 9B scores 114/120 (95%). On hardware you own, for free.",
   },
   {
     icon: Terminal,
@@ -269,6 +279,64 @@ export default function WrenchPage() {
           </div>
         </section>
 
+        {/* BFCL Independent Benchmark */}
+        <section className="py-16 px-6 border-t border-[var(--border)]">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-[var(--text)] mb-2 text-center">
+              Independent Validation
+            </h2>
+            <p className="text-sm text-[var(--text-muted)] mb-2 text-center">
+              Wrench 35B on the{" "}
+              <a
+                href="https://gorilla.cs.berkeley.edu/leaderboard.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--accent)] hover:underline"
+              >
+                Berkeley Function Calling Leaderboard
+              </a>{" "}
+              (BFCL) — 1,390 test cases across 7 categories.
+            </p>
+            <p className="text-xs text-[var(--text-dim)] mb-8 text-center">
+              Non-live / AST category. An independent, standardized benchmark — not designed by us.
+            </p>
+
+            <div className="max-w-lg mx-auto mb-6">
+              <div className="border border-[var(--border)] rounded-lg overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-[var(--surface)]">
+                      <th className="text-left px-4 py-2.5 text-[var(--text-muted)] font-medium">Category</th>
+                      <th className="text-right px-4 py-2.5 text-[var(--text-muted)] font-medium">Score</th>
+                      <th className="text-right px-4 py-2.5 text-[var(--text-muted)] font-medium">Accuracy</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {bfclScores.map((b) => (
+                      <tr key={b.category} className="border-t border-[var(--border)]">
+                        <td className="px-4 py-2.5 text-[var(--text)]">{b.category}</td>
+                        <td className="text-right px-4 py-2.5 text-[var(--text-muted)] font-mono">{b.correct}/{b.total}</td>
+                        <td className="text-right px-4 py-2.5 text-[var(--text-muted)] font-mono">{b.accuracy}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-[var(--accent)]">
+                      <td className="px-4 py-2.5 text-[var(--accent)] font-semibold">Overall</td>
+                      <td className="text-right px-4 py-2.5 text-[var(--accent)] font-mono font-semibold">1128/1390</td>
+                      <td className="text-right px-4 py-2.5 text-[var(--accent)] font-mono font-semibold">82.0%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <p className="text-xs text-[var(--text-dim)] text-center max-w-xl mx-auto">
+              BFCL tests raw function-call syntax across Python, Java, and JavaScript — parallel invocations,
+              multi-function calls, and irrelevance detection. A different axis than our agentic benchmark.
+              Together, both benchmarks validate Wrench across structured function calling and real-world agent workflows.
+            </p>
+          </div>
+        </section>
+
         {/* Features */}
         <section className="py-16 px-6 border-t border-[var(--border)]">
           <div className="max-w-4xl mx-auto">
@@ -366,7 +434,8 @@ export default function WrenchPage() {
                         ["Quantization", "Q4_K_M GGUF (~20GB)"],
                         ["Context Window", "8,192 tokens"],
                         ["Min GPU", "16GB VRAM"],
-                        ["Benchmark", "118/120 (98.3%)"],
+                        ["Clank Benchmark", "118/120 (98.3%)"],
+                        ["BFCL (non_live)", "82.0% (1128/1390)"],
                         ["License", "Apache 2.0"],
                       ].map(([label, value]) => (
                         <tr key={label} className="border-t border-[var(--border)] first:border-t-0">
