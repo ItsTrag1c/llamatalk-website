@@ -33,7 +33,7 @@ export function Footer() {
               <span className="text-sm font-medium text-[var(--text)]">Clank</span>
             </div>
             <p className="text-xs text-[var(--text-dim)] max-w-xs leading-relaxed">
-              Local-first AI agent gateway. Open-source alternative to OpenClaw.
+              Local-first AI agent harness. Open-source alternative to OpenClaw.
             </p>
           </div>
 

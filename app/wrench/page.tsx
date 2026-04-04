@@ -88,7 +88,7 @@ const features = [
   {
     icon: Bot,
     title: "Built for Clank",
-    desc: "Drop-in model for the Clank Gateway. Set it as your primary model and go — multi-channel, multi-agent, full tool suite.",
+    desc: "Drop-in model for Clank. Set it as your primary model and go — multi-channel, multi-agent, full tool suite.",
   },
 ];
 
@@ -107,8 +107,9 @@ export default function WrenchPage() {
               Wrench
             </h1>
             <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto mb-8">
-              Purpose-built agentic AI models. Fine-tuned for tool calling,
-              error recovery, and system prompt following. The{" "}
+              Frontier-grade agentic AI that runs on your hardware, for free.
+              No API keys, no monthly bills — just models built for tool calling,
+              error recovery, and getting real work done. The{" "}
               <span className="text-[var(--accent)] font-semibold">35B</span> scores
               118/120 (matches Claude Opus) on 16GB VRAM. The{" "}
               <span className="text-[var(--accent)] font-semibold">9B</span> scores
@@ -385,6 +386,9 @@ export default function WrenchPage() {
                   <p>ollama create wrench-9b -f Modelfile</p>
                   <p>ollama run wrench-9b</p>
                   <p></p>
+                  <p className="text-[var(--text-dim)]"># Recommended: enable KV cache quantization for lower VRAM usage</p>
+                  <p>OLLAMA_KV_CACHE_TYPE=q8_0 OLLAMA_FLASH_ATTENTION=1 ollama serve</p>
+                  <p></p>
                   <p className="text-[var(--text-dim)]"># Or use with Clank:</p>
                   <p>npm install -g @clanklabs/clank</p>
                   <p>clank setup</p>
@@ -400,10 +404,10 @@ export default function WrenchPage() {
                 </h3>
                 <div className="bg-[var(--surface)] border border-[var(--border)] rounded-lg p-4 font-mono text-sm text-[var(--text-muted)] space-y-1">
                   <p className="text-[var(--text-dim)]"># 35B model:</p>
-                  <p>./llama-server -m wrench-35B-A3B-Q4_K_M.gguf --jinja -ngl 100 -fa on --temp 0.4 --top-k 20 --top-p 0.95 --min-p 0 --presence-penalty 1.5 -c 32768</p>
+                  <p>./llama-server -m wrench-35B-A3B-Q4_K_M.gguf --jinja -ngl 100 -fa on --cache-type-k q8_0 --cache-type-v q8_0 --temp 0.4 --top-k 20 --top-p 0.95 --min-p 0 --presence-penalty 1.5 -c 32768</p>
                   <p></p>
                   <p className="text-[var(--text-dim)]"># 9B model:</p>
-                  <p>./llama-server -m wrench-9B-Q4_K_M.gguf --jinja -ngl 100 -fa on --temp 0.4 --top-k 20 --top-p 0.95 --min-p 0 --presence-penalty 1.5 -c 8192</p>
+                  <p>./llama-server -m wrench-9B-Q4_K_M.gguf --jinja -ngl 100 -fa on --cache-type-k q8_0 --cache-type-v q8_0 --temp 0.4 --top-k 20 --top-p 0.95 --min-p 0 --presence-penalty 1.5 -c 8192</p>
                   <p></p>
                   <p className="text-[var(--text-dim)]"># Serves an OpenAI-compatible API on port 8080</p>
                   <p className="text-[var(--text-dim)]"># Point any app at http://localhost:8080/v1</p>

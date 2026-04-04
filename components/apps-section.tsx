@@ -16,10 +16,10 @@ export function AppsSection() {
   return (
     <section className="py-20 px-6" id="about">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl font-bold mb-2">One Gateway, Many Frontends</h2>
+        <h2 className="text-2xl font-bold mb-2">One Harness, Many Frontends</h2>
         <p className="text-[var(--text-muted)] text-sm mb-8 max-w-2xl">
           Clank is a single daemon that connects all your interfaces to AI agents.
-          Start the gateway once — Telegram stays alive in the background while you
+          Start the harness once — Telegram stays alive in the background while you
           use CLI, browser, or TUI on demand. Everything shares sessions and memory.
         </p>
 
@@ -58,12 +58,12 @@ export function AppsSection() {
               </div>
             </div>
             <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-3">
-              AI agent gateway — one daemon powering CLI, TUI, Web UI, Telegram, and Discord.
+              AI agent harness — one daemon powering CLI, TUI, Web UI, Telegram, and Discord.
               Multi-agent, 25 tools, self-configuring through conversation. Optimized for
               local models on consumer hardware.
             </p>
             <div className="flex flex-wrap gap-1.5 mb-5">
-              {["Gateway", "Multi-Agent", "Telegram", "Web UI", "25 Tools", "Plugins"].map((tag) => (
+              {["Harness", "Multi-Agent", "Telegram", "Web UI", "25 Tools", "Plugins"].map((tag) => (
                 <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-[rgba(249,115,22,0.1)] border border-[rgba(249,115,22,0.15)] text-[var(--accent)]">
                   {tag}
                 </span>

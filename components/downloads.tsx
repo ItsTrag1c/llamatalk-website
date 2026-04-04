@@ -27,7 +27,7 @@ export function Downloads() {
             <div><span className="text-[var(--text-dim)]">$</span> clank</div>
           </div>
           <p className="mt-3 text-xs text-[var(--text-dim)]">
-            Setup auto-detects local models (Ollama, LM Studio, llama.cpp), configures the gateway,
+            Setup auto-detects local models (Ollama, LM Studio, llama.cpp), configures the harness,
             and connects your preferred interfaces (Telegram, Discord, Web UI).
           </p>
         </div>

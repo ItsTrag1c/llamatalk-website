@@ -24,9 +24,9 @@ export function Hero() {
         </h1>
 
         <p className="mt-4 text-lg text-[var(--text-muted)] max-w-xl mx-auto leading-relaxed">
-          A local-first AI agent gateway. One daemon, many frontends —
-          CLI, browser, Telegram, Discord. Multi-agent, self-configuring,
-          optimized for local models. Zero telemetry.
+          AI-assisted development shouldn&apos;t cost hundreds a month.
+          Clank is a local-first AI agent harness — one daemon, many frontends,
+          optimized for local models. Frontier-grade tools on hardware you already own, for free.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">

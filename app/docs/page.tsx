@@ -47,7 +47,7 @@ export default function DocsPage() {
 clank setup
 clank`}</CodeBlock>
           <p className="text-[var(--text-muted)] mt-3 text-sm">
-            Setup auto-detects your local models, configures the gateway, and gets you chatting in under 2 minutes.
+            Setup auto-detects your local models, configures the harness, and gets you chatting in under 2 minutes.
           </p>
           <div className="mt-4 p-3 rounded-md border border-[var(--border)] bg-[var(--surface)]">
             <p className="text-[var(--text-muted)] text-sm">
@@ -117,11 +117,11 @@ clank`}</CodeBlock>
                 </tr>
               </thead>
               <tbody className="text-[var(--text)]">
-                <CmdRow cmd="clank" desc="Start gateway + TUI" />
+                <CmdRow cmd="clank" desc="Start harness + TUI" />
                 <CmdRow cmd="clank chat" desc="Direct CLI chat" />
                 <CmdRow cmd="clank dashboard" desc="Open Web UI" />
                 <CmdRow cmd="clank setup" desc="Run setup wizard" />
-                <CmdRow cmd="clank gateway start|stop|restart" desc="Manage gateway" />
+                <CmdRow cmd="clank gateway start|stop|restart" desc="Manage harness" />
                 <CmdRow cmd="clank auth login|status|logout" desc="OAuth credentials" />
                 <CmdRow cmd="clank models list" desc="List models" />
                 <CmdRow cmd="clank agents list" desc="List agents" />

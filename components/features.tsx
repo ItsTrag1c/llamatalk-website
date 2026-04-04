@@ -14,7 +14,7 @@ import {
 const features = [
   {
     icon: Server,
-    title: "Gateway Architecture",
+    title: "Harness Architecture",
     description: "Single daemon, multiple frontends. Telegram stays alive while you use CLI or browser.",
   },
   {
