@@ -17,7 +17,7 @@ export const APP_DATA = {
   clankCode: {
     name: "Clank Code",
     tagline: "Terminal coding agent",
-    description: "Claude Code-style terminal coding agent with local-first routing, shared config, project memory, and Codex OAuth support.",
+    description: "Terminal coding agent with local-first routing, shared config, project memory, and Codex OAuth support.",
     color: "build",
     github: "ClankLabs/clank-code",
     features: ["Coding Agent", "Terminal UI", "Project Memory", "Codex OAuth", "Local-First"],

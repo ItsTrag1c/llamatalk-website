@@ -89,7 +89,7 @@ export function AppsSection() {
               </div>
             </div>
             <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-3">
-              Terminal coding agent with a Claude Code-style workflow. Local-first routing, project memory, persistent sessions, slash commands, and Codex OAuth support.
+              Terminal coding agent with a focused coding workflow. Local-first routing, project memory, persistent sessions, slash commands, and Codex OAuth support.
             </p>
             <div className="flex flex-wrap gap-1.5 mb-5">
               {["Terminal UI", "Coding Agent", "Project Memory", "Sessions", "Codex OAuth"].map((tag) => (
